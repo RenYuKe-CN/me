@@ -14,9 +14,22 @@
 
     <div style="display: block;background-color:aliceblue;padding:50px ;max-width: 700px;margin: 30px auto;line-height: 1.7;">
        
-      
-        <h1>我的个人主页</h1>
-        <p>my first website</p>
+       <h1>HTML学习项目</h1>
+       <h2>我的网页正在进行调整测试，网页内容随时变动</h2>
+        <p style="text-align:center;">随机一言</p>
+        <p>
+        <p id="hitokoto"><a style="color: black;text-align: center;"href="#" id="hitokoto_text">:D 获取中...</a></p>
+        <script>
+            fetch('https://v1.hitokoto.cn')
+              .then(response => response.json())
+              .then(data => {
+                const hitokoto = document.getElementById('hitokoto_text')
+               
+                hitokoto.innerText = data.hitokoto
+              })
+              .catch(console.error)
+          </script>
+        </p>
     </div>
 
     <div style="display:block ;padding: 15px;text-align: center;">
